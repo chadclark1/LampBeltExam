@@ -74,6 +74,7 @@
 						<td><a href="/items/profile/<?php echo $item['id'] ?>"</a><?php echo $item['description'] ?></td>
 <?php
 			foreach ($users as $user) {
+				var_dump($users);
 				if($item['created_by'] === $user['id']){
 ?>
 						<td><?php echo $user['first_name'] ?></td>
