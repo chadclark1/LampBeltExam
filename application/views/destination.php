@@ -6,13 +6,15 @@
 	// if ($session == FALSE) {
 	// 	redirect("/users/signin");
 	// }
-
-	var_dump($this->session->all_userdata());
-	var_dump($this->session->userdata('destination'));
-	var_dump($destination);
-	echo "<br>";
-	echo "<br>";
-	echo $this->session->userdata('destination');
+	// var_dump($this->session->all_userdata());
+	// var_dump($destination);
+	// var_dump($this->session->userdata('destination'));
+	// var_dump($destination);
+	// echo "<br>";
+	// echo "<br>";
+	// echo $this->session->userdata('destination');
+	$users_trips = $this->session->userdata('users_trips');
+	// var_dump($users_trips);
 ?>
 
 <html>
@@ -44,21 +46,29 @@
 		</header>
 		<div class="container">
 
-
-			<h2 class="col-md-12">[Destination]</h2>
+		
+			<h2 class="col-md-12"><?php echo $destination['destination']?></h2>
 			
-			<h4 class="col-md-11 col-md-offset-1">Description: [DATA]</h4> 
-			<h4 class="col-md-11 col-md-offset-1">Date From: [DATA]</h4>
-			<h4 class="col-md-11 col-md-offset-1">Date To: [DATA]</h4>
+			<h4 class="col-md-11 col-md-offset-1">Description: <?php echo $destination['description']?></h4> 
+			<h4 class="col-md-11 col-md-offset-1">Date From: <?php echo $destination['date_from']?></h4>
+			<h4 class="col-md-11 col-md-offset-1">Date To: <?php echo $destination['date_to']?></h4>
 			
 
 
 
 			
 			<h2 class="col-md-12">Other users' joining the trip</h2>
+<?php 
+	foreach ($users_trips as $users_trips => $user) {
+		if($user['travel_id'] == $destination['id']){
+			if($user['user_id'] != $this->session->userdata['user_id']){
+				echo "<h4 class='col-md-11 col-md-offset-1'>" . $user['first_name'] . "</h4>";
+			}
+		}
+	}
+
+?>
 			
-			<h4 class="col-md-11 col-md-offset-1">[Name]</h4> 
-			<h4 class="col-md-11 col-md-offset-1">[Name]</h4>
 
 		</div>
 	</body>

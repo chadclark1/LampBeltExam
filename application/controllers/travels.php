@@ -114,11 +114,37 @@ class Travels extends CI_Controller {
 
 		// var_dump($destination); die();
 
-		$this->session->set_userdata('destination', $destination);
+		// $this->session->set_userdata('destination', $destination);
 
 		// var_dump($this->session->all_userdata());
+		//////////------------------//////////
 
-		redirect("/trips/get_users_by_id/$id");
+		// $destination_users = $this->Trip->get_users_by_id($id);
+
+		// $this->session->set_userdata('destination_users', $destination_users);
+
+		
+		$this->load->view('destination', array(
+				'destination' => $destination
+
+			));
+
+
+
+		// redirect("/trips/get_users_by_id/$id");
+
+
+
+
+
+	// $this->load->view('trip_profile', array(
+ //  		'trip_prof' => $trip_prof,
+ //  		'other_users' => $other_users
+ //  		)); $this->load->view('trip_profile', array(
+ //  		'trip_prof' => $trip_prof,
+ //  		'other_users' => $other_users
+ //  		));
+
 	}
 
 }

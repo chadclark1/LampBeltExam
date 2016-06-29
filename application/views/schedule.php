@@ -7,7 +7,7 @@
 	// 	redirect("/users/signin");
 	// }
 
-// var_dump($this->session->userdata('user_first_name'));
+// var_dump($this->session->all_userdata());
 // echo "<br>";
 // var_dump($this->session->userdata('users_trips'));
 // var_dump($this->session->userdata('travels_trips'));
@@ -145,7 +145,7 @@ $travels_trips = $this->session->userdata('travels_trips');
 			} 
 ?>
 
-						<td><a href="/travels/destination/$travel['travel_id']"><?php echo $travel['destination'] ?></a></td>
+						<td><a href="/travels/destination/<?php echo $travel['travel_id'] ?>"><?php echo $travel['destination'] ?></a></td>
 						<td><?php echo $travel['date_from'] ?></td>
 						<td><?php echo $travel['date_to'] ?></td>
 						<td><a href="/trips/add/<?php echo $travel['travel_id'] ?>">Join</a></td>
