@@ -30,10 +30,13 @@ class Items extends CI_Controller {
 		$item = $this->Item->get_item_by_id($id);
 
 		// echo "here"; die();
-
-		$this->load->view('profile', array(
-			'item' => $item
+		$users = $this->Item->get_users();
+		
+		$this->load->view('dashboard', array(
+			'items' => $items,
+			'users' => $users,
 			));
+
 
 
 	}

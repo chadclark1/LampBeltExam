@@ -6,7 +6,7 @@
 	if ($session == FALSE) {
 		redirect("/users/signin");
 	}
-	$users = $this->session->userdata('users');
+	// $users = $this->session->userdata('users');
 	// var_dump($users);
 ?>
 
