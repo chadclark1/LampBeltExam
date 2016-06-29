@@ -1,23 +1,18 @@
 <?php 
+	// var_dump($this->session->all_userdata()); 
+	// $user_level = $this->session->userdata('user_level');
+
 	$session = $this->session->userdata('is_logged_in');
 	if ($session == FALSE) {
 		redirect("/users/signin");
 	}
-
-	// $user_level = $this->session->userdata('user_level');
-	// if ($user_level != "admin") {
-	// 	redirect("/users/signin");
-	// }
-
-
-
+	$users = $this->session->userdata('users');
+	// var_dump($users);
 ?>
 
-
-<!DOCTYPE html>
 <html>
 	<head>
-		<title>Add Item</title>
+		<title>Item Profile</title>
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -43,30 +38,30 @@
 			</nav>
 		</header>
 		<div class="container">
-<?php
-$error = $this->session->flashdata('error');
-if($error){
-?>
-				<h5><?php echo $error ?></h5>
-<?php
-}
-?>
-			<h2>Add an Item</h2>
 
-			<div class="col-md-5">
-				<form action="/items/add_item" method="post" >
+		
+			<h2 class="col-md-12"><?php echo $item['description']?></h2>
+			
+			
+			
 
-					
-					<fieldset>
-						<label for="description">Item/Product</label>
-						<input type="text" name="description" class="form-control" placeholder="Item Name"></input>
-					</fieldset>
-					
-					<div class="text-right">
-					<button type="submit" class="btn btn-success submit">Add</button>
-					</div>
-				</form>
-			</div>
+
+
+			
+			<h4 class="col-md-12">Users who added this product/item to their wishlist:</h4>
+
+<?php 
+	foreach ($users as $user) {
+		// echo $user['item_id'] . ' ' . $item['id']  . "<br><br>";
+		if($user['item_id'] === $item['id']){
+?>
+			<h5 class="col-md-12"><li><?php echo $user['first_name'] ?></li></h5>
+<?php
+		}
+	}
+?>
+
+			
 
 		</div>
 	</body>

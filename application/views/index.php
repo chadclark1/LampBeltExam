@@ -18,7 +18,7 @@
 			    <div class="navbar-header">
 			      <a href="/">
 				      <h1 class="navbar-brand">
-				       	Travel!
+				       	Wishlist
 				      </h1>
 			      </a>
 			    </div>
@@ -28,7 +28,7 @@
 		<div class="container">
 
 			<h2>Welcome!</h2>
-			<a href="/users/show_schedule">travels</a>
+			
 			<div class="text-center">
 			<div class="col-md-6 col-md-offset-3 errors">
 <?php 
@@ -73,6 +73,10 @@
 							<fieldset class="form-group">
 							    <label for="confirm">Confirm Password:</label>
 							    <input type="password" name ="confirm" class="form-control" id="confirm">
+							</fieldset>
+							<fieldset class="form-group">
+							    <label for="date">Date Hired</label>
+							    <input type="text" name ="date" class="form-control" placeholder="YYYY/MM/DD" id="date">
 							</fieldset>
 							<input type="hidden" name="action" value="register">
 							<button type="submit" class="btn btn-primary">Register</button>
