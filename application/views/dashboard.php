@@ -11,7 +11,7 @@
 	// var_dump($current_user);
 	$users = $this->session->userdata('users');
 	// var_dump($this->session->all_userdata());
-	var_dump($users);
+	var_dump($current_user);
 ?>
 
 <html>
