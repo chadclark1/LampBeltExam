@@ -13,7 +13,6 @@
 	// var_dump($this->session->all_userdata());
 	var_dump($this->session->all_userdata());
 ?>
-
 <html>
 	<head>
 		<title>Wishlist Dashboard</title>
