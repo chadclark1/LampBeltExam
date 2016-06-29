@@ -9,10 +9,11 @@ class Items extends CI_Controller {
 
 		$items = $this->Item->get_items();
 
-		// var_dump($items); die();
+		$users = $this->Item->get_users();
 
 		$this->load->view('dashboard', array(
-			'items' => $items
+			'items' => $items,
+			'users' => $users,
 			));
 
 	}

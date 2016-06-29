@@ -35,4 +35,8 @@ class Item extends CI_Model {
 	public function delete($id){
 		return $this->db->query("DELETE FROM items WHERE id = $id");
 	}
+
+	public function get_users(){
+		return $this->db->query("SELECT * FROM users LEFT JOIN users_items ON users.id = users_items.user_id")->result_array();
+	}
 }

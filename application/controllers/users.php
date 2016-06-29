@@ -12,9 +12,9 @@ class Users extends CI_Controller {
 
 		$this->load->model('User');
 
-		$users = $this->User->get_users();
+		// $users = $this->User->get_users();
 
-		$this->session->set_userdata('users', $users);
+		// $this->session->set_userdata('users', $users);
 
 		redirect("/items/show_items");
 

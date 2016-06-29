@@ -9,9 +9,10 @@
 	// var_dump($items);
 	$current_user = $this->session->all_userdata();
 	// var_dump($current_user);
-	$users = $this->session->userdata('users');
+	// $users = $this->session->userdata('users');
 	// var_dump($this->session->all_userdata());
-	var_dump($this->session->all_userdata());
+	// var_dump($this->session->all_userdata());
+	// var_dump($users);
 ?>
 <html>
 	<head>
