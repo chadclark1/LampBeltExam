@@ -16,6 +16,8 @@ class Users extends CI_Controller {
 
 		$this->session->set_userdata('users', $users);
 
+		var_dump($this->session->all_userdata()); die();
+
 		redirect("/items/show_items");
 
 		// $this->load->view('dashboard');
